@@ -33,6 +33,8 @@ else:
 setup_requirements = ['pytest-runner', ]
 
 test_requirements = [
+        'astropy >= 2.0.0',
+        'python-casacore >= 2.2.1',
         'pytest',
         'dask[array] >= 0.17.4']
 
