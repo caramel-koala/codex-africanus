@@ -1,5 +1,6 @@
 FROM kernsuite/base:3
-RUN docker-apt-install python-pip
+RUN docker-apt-install python-pip casacore-dev python-casacore \
+                        libboost-python-dev libcfitsio-dev wcslib-dev
 RUN pip install --upgrade pip setuptools
 ADD . /code
 WORKDIR /code
