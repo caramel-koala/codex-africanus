@@ -4,6 +4,7 @@
 """The setup script."""
 
 import os
+import sys
 
 from setuptools import setup, find_packages
 
@@ -32,8 +33,13 @@ else:
 
 setup_requirements = ['pytest-runner', ]
 
+if sys.version_info[0] == 3:
+    astropy_req = "astropy >= 3.0.0"
+else:
+    astropy_req = "astropy >= 2.0.0, < 3.0.0"
+
 test_requirements = [
-        'astropy >= 2.0.0',
+        astropy_req,
         'python-casacore >= 2.2.1',
         'pytest',
         'dask[array] >= 0.17.4']
